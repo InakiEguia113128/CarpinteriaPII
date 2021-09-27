@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=PCGALACTICA\SQLEXPRESS01;Initial Catalog=carpinteria_db;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="pcgalactica\sqlexpress01.carpinteria_db.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTPresupuestoTableAdapter" GeneratorDataComponentClassName="DTPresupuestoTableAdapter" Name="DTPresupuesto" UserDataComponentName="DTPresupuestoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pcgalactica\sqlexpress01.carpinteria_db.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        T_PRODUCTOS.id_producto, T_PRODUCTOS.n_producto, T_DETALLES_PRESUPUESTO.presupuesto_nro, T_PRESUPUESTOS.fecha
+FROM            T_DETALLES_PRESUPUESTO INNER JOIN
+                         T_PRESUPUESTOS ON T_DETALLES_PRESUPUESTO.presupuesto_nro = T_PRESUPUESTOS.presupuesto_nro INNER JOIN
+                         T_PRODUCTOS ON T_DETALLES_PRESUPUESTO.id_producto = T_PRODUCTOS.id_producto</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_producto" DataSetColumn="id_producto" />
+              <Mapping SourceColumn="n_producto" DataSetColumn="n_producto" />
+              <Mapping SourceColumn="presupuesto_nro" DataSetColumn="presupuesto_nro" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTPresupuesto" msprop:Generator_TableClassName="DTPresupuestoDataTable" msprop:Generator_TableVarName="tableDTPresupuesto" msprop:Generator_TablePropName="DTPresupuesto" msprop:Generator_RowDeletingName="DTPresupuestoRowDeleting" msprop:Generator_RowChangingName="DTPresupuestoRowChanging" msprop:Generator_RowEvHandlerName="DTPresupuestoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTPresupuestoRowDeleted" msprop:Generator_UserTableName="DTPresupuesto" msprop:Generator_RowChangedName="DTPresupuestoRowChanged" msprop:Generator_RowEvArgName="DTPresupuestoRowChangeEvent" msprop:Generator_RowClassName="DTPresupuestoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_producto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_producto" msprop:Generator_ColumnPropNameInRow="id_producto" msprop:Generator_ColumnPropNameInTable="id_productoColumn" msprop:Generator_UserColumnName="id_producto" type="xs:int" />
+              <xs:element name="n_producto" msprop:Generator_ColumnVarNameInTable="columnn_producto" msprop:Generator_ColumnPropNameInRow="n_producto" msprop:Generator_ColumnPropNameInTable="n_productoColumn" msprop:Generator_UserColumnName="n_producto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="presupuesto_nro" msprop:Generator_ColumnVarNameInTable="columnpresupuesto_nro" msprop:Generator_ColumnPropNameInRow="presupuesto_nro" msprop:Generator_ColumnPropNameInTable="presupuesto_nroColumn" msprop:Generator_UserColumnName="presupuesto_nro" type="xs:int" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
